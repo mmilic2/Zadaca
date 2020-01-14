@@ -26,7 +26,7 @@ public class Zadatak5 {
          
         while (broj <= a*b){
         	
-            for (int i = maxi; i >= mini; i--){
+            for (int i = maxj; i >= mini; i--){
                 matrica[maxi][i] = broj;
                      
                 broj++;
