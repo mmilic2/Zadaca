@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Start {
 
 	private List<Opcina> opcine;
+	Scanner sc;
 	
 	public Start() {
 		
@@ -21,7 +22,7 @@ public class Start {
 	private void unos() {
 		Opcina opcina;
 		Scanner sc = new Scanner(System.in);
-		
+		String provjera = "";
 		while(true) {
 			opcina = new Opcina();
 			opcina.setNaziv(unesiNaziv());
@@ -30,7 +31,7 @@ public class Start {
 			
 			opcine.add(opcina);
 			
-			String provjera = "";
+			
 			
 			System.out.println("Upisite x kako bi zavrsili s programom");
 			
@@ -38,7 +39,7 @@ public class Start {
 				provjera = sc.nextLine();
 	        }
 			
-			if(provjera.trim().toLowerCase().equals("x")) {
+			if(provjera.contains("x")) {
 				sc.close();
 				return;
 			}
@@ -54,16 +55,14 @@ public class Start {
 			ime = sc.next();
          }
 		
-		sc.close();
+		
 		return ime;
 		
 		
 	}
 
 	private Zupanija unesiZupanija() {
-		Zupanija zupanija;
-		zupanija = new Zupanija();
-		return zupanija;
+		return new Zupanija();
 	}
 
 	private String unesiNaziv() {
@@ -76,7 +75,6 @@ public class Start {
 			naziv = sc.nextLine();
          }
 		
-		sc.close();
 		return naziv;
 
 	}
